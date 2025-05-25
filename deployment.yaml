@@ -26,8 +26,7 @@ spec:
         - containerPort: 3015
 ---
 # Writing service.yml to expose the application 
-apiVersion: apps/v1
-kind: apiVersion: v1
+apiVersion: v1
 kind: Service
 metadata:
   name: velu-app-svc

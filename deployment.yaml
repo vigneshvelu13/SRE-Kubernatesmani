@@ -6,12 +6,13 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      app: web
+      app: velu
   template:
     metadata:
       labels:
-        app: web
+        app: velu
     spec: 
+
       containers:
       - name: cart-app
         image: muralisocial123/flower-app:1.0
@@ -24,3 +25,17 @@ spec:
             cpu: "50m"  
         ports:
         - containerPort: 3015
+---
+# Writing service.yml to expose the application 
+apiVersion: apps/v1
+kind: apiVersion: v1
+kind: Service
+metadata:
+  name: velu-app-svc
+spec:
+  selector:
+    app: velu
+  ports:
+  - port: 3016
+    targetPort: 3015
+  type: LoadBalancer  

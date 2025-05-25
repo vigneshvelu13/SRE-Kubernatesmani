@@ -12,7 +12,6 @@ spec:
       labels:
         app: velu
     spec: 
-
       containers:
       - name: cart-app
         image: muralisocial123/flower-app:1.0

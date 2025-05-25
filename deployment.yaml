@@ -1,9 +1,8 @@
 apiVersion: apps/v1
-kind: apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: vignesh-app-deployment
-spec:
+spec: 
   replicas: 3
   selector:
     matchLabels:
@@ -11,17 +10,17 @@ spec:
   template:
     metadata:
       labels:
-        app: web 
-    spec:
+        app: web
+    spec: 
       containers:
       - name: cart-app
         image: muralisocial123/flower-app:1.0
         resources:
           limits:
+            memory: "250Mi"
+            cpu: "100m"
+          requests:
             memory: "128Mi"
-            cpu: "500m"
-          request:
-            memory: "12Mi"
             cpu: "50m"  
         ports:
         - containerPort: 3015
